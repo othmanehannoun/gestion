@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Responsive vertical menu navigation</title>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/data.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script src="main.js"></script>
+
+		<style>
+			.ad {
+				position: absolute;
+				width: 300px;
+				height: 250px;
+				border: 1px solid #ddd;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 250px;
+				z-index: 10;
+			}
+			.ad .close {
+				position: absolute;
+				font-family: 'ionicons';
+				width: 20px;
+				height: 20px;
+				color: #fff;
+				background-color: #999;
+				font-size: 20px;
+				left: -20px;
+				top: -1px;
+				display: table-cell;
+				vertical-align: middle;
+				cursor: pointer;
+				text-align: center;
+			}
+	
+        </style>
+        <script>$(document).ready(function() {
+            $('.nav-trigger').click(function() {
+                $('.side-nav').toggleClass('visible');
+            });
+        });
+        </script>
+		<script type="text/javascript">
+		
+		</script>
+
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>Gomy</span>
+			</div>
+			<a href="#" class="nav-trigger"><span></span></a>
+			
+		</div>
+		<div class="side-nav">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>Gomy</span>
+				
+			</div>
+			<nav>
+				<ul>
+					<li>
+						<a href="/home">
+							<span><i class="fa fa-user"></i></span>
+							<span>Liste Entreprise</span>
+						</a>
+					</li>
+					<li class="active">
+						<a href="/rechercheS">
+							<span><i class="fa fa-bar-chart"></i></span>
+							<span>recherche salarie</span>
+						</a>
+					</li>
+				
+				</ul>
+			</nav>
+		</div>
+
+		<div class="main-content">
+            <div class="title col-12 d-flex justify-content-center">
+                information de departement
+            </div>
+			<div class="container-fluid">
+
+				<div class="row extra_margin">
+			
+				
+				  <div class="col-md-4 col-sm-12 col-xs-12">
+			
+				
+						  <img src="youcode.jpg" class="img-rounded" style="margin-top:50px"/>
+			
+						
+			
+				  </div> 
+				  <div class="col-md-8 col-sm-* col-xs-*">
+			<form method="POST">
+				
+					<p class="lead"><%= data.nomDepartement%></p>
+			
+					<hr />
+
+					<p class="ch-dp">
+						Chef Département: <span><%= data.chef%></span>
+					</p>
+					<p class="discription">
+                        <%= data.descriptionD%>
+					</p>
+			    
+                    <div class="col-12">
+                        
+                        <button type="submit" href="/afficheS.ejs" formaction="/afficheS?nomD=<%= data.nomDepartement%>"  class="btn btn-primary btn-lg" style="margin-top:50px;margin-left: 50px;"> afficher salarie</button>&nbsp;
+                      
+                        
+                    </div>
+            </form>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModalS"style="position:relative; left:44px" >ajouter salairie</button>
+				  </div> <!-- End column 2 -->
+			
+				</div> <!-- End row 1 -->
+			
+			  </div> <!-- End main container -->
+                 <!--modal ajouter salarie -->
+					<div class="modal fade" id="exampleModalS" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h5 class="modal-title" id="exampleModalLabel">ajouter salarie</h5>
+							  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							  </button>
+							</div>
+							<div class="modal-body">
+                                <form method="POST">
+                                    <label >nom departement</label><select class="form-control" name="select">
+                                        
+                                        <% for(i in dataD2) {%>
+                                        <option><%= dataD2[i].nomDepartement %></option>
+                                        <% } %>
+                                       
+                                      </select>   
+								<label >matricule</label><input class="form-control" type="text" placeholder="Default input" name="matricule" required>
+								<label >nom</label><input class="form-control" type="text" placeholder="Default input" name="nom" required>
+                                <label >prenom</label><input class="form-control" type="text" placeholder="Default input" name="prenom" required>
+                                <label >age</label><input class="form-control" type="text" placeholder="Default input" name="age" required>
+                                <label >salaire</label><input class="form-control" type="text" placeholder="Default input" name="salaire" required>
+								  <div class="col-12 d-flex justify-content-center" style="margin-top: 20px;">
+                                    <button type="submit" formaction="/addSalarie" class="btn btn-md btn-primary">ajouter salarie</button>
+                                </form>
+								   </div>
+							</div>
+						</div>
+							
+						  </div>
+						
+					  </div>
+                    <!--/modal ajouter salarie -->
+
+			  <div class="f1"> 
+
+				<div class="col-md-6 col-xl-3">
+					<div class="card social-widget-card">
+					<div class="card-block-big bg-facebook">
+						<h3 class="h3">1165 +</h3>
+						<span class="m-t-10">Facebook Users</span>
+						<i id="fa" class="fa fa-facebook"></i>
+					</div>
+					</div>
+					</div>
+			
+					<div class="col-md-6 col-xl-3">
+						<div class="card social-widget-card">
+						<div class="card-block-big bg-twitter">
+							<h3 class="h3">200 +</h3>
+							<span class="m-t-10">Twitter Users</span>
+							<i id="fa" class="fa fa-twitter"></i>
+						</div>
+						</div>
+						</div>
+			
+						<div class="col-md-6 col-xl-3">
+							<div class="card social-widget-card">
+							<div class="card-block-big bg-linkdin">
+								<h3 class="h3">500 +</h3>
+								<span class="m-t-10">Linked In Users</span>
+								<i id="fa" class="fa fa-linkedin"></i>
+							</div>
+							</div>
+							</div>
+					
+							<div class="col-md-6 col-xl-3">
+								<div class="card social-widget-card">
+								<div class="card-block-big bg-google">
+									<h3 class="h3">407 +</h3>
+									<span class="m-t-10">Google Plus Users</span>
+									<i id="fas" class="fa fa-google-plus"></i>
+								</div>
+								</div>
+								</div>
+			  </div>
+		</div>
+		<script src="https://kit.fontawesome.com/yourcode.js"></script>
+	</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Responsive vertical menu navigation</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="main.css">
+
+		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/data.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		
+
+		<style>
+            body{
+                overflow-x: hidden;
+            }
+			.ad {
+				position: absolute;
+				width: 300px;
+				height: 250px;
+				border: 1px solid #ddd;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 250px;
+				z-index: 10;
+			}
+			.ad .close {
+				position: absolute;
+				font-family: 'ionicons';
+				width: 20px;
+				height: 20px;
+				color: #fff;
+				background-color: #999;
+				font-size: 20px;
+				left: -20px;
+				top: -1px;
+				display: table-cell;
+				vertical-align: middle;
+				cursor: pointer;
+				text-align: center;
+			}
+			ul li{
+				list-style: none;
+			}
+			.entreprise div div img{
+				margin-top: 6px;
+
+			}
+			.entreprise div .ul{
+				margin-top: 5px;
+			}
+			.entreprise{
+				margin: 10px;
+			}
+			.btn-En{
+				display: flex;
+				justify-content: center;
+				margin: 10px;
+			}
+		</style>
+<script>$(document).ready(function() {
+	$('.nav-trigger').click(function() {
+		$('.side-nav').toggleClass('visible');
+	});
+});
+
+
+</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>Gomy</span>
+			</div>
+			<a href="#" class="nav-trigger"><span></span></a>
+			
+		</div>
+		<div class="side-nav">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>Gomy</span>
+				
+			</div>
+			<nav>
+				<ul>
+					<li>
+						<a href="/home">
+							<span><i class="fa fa-user"></i></span>
+							<span>Liste Entreprise</span>
+						</a>
+					</li>
+				
+					<li class="active">
+						<a href="/rechercheS">
+							<span><i class="fa fa-bar-chart"></i></span>
+							<span>recherche salarie</span>
+						</a>
+					</li>
+					
+				
+				</ul>
+			</nav>
+		</div>
+		<div class="main-content">
+			<div class="title col-12 d-flex justify-content-center">
+				Liste Entreprise
+			</div>
+			<div class="container">
+				<form method="POST">
+				<div class="row d-flex justify-content-center">
+                    <% for(i in data.entreprise) {%>
+					<div class=" entreprise col-lg-4 col-md-6 col-12 border border-dark">
+                      <div class="row">
+					   <div class="col-4" >
+						<img src="youcode.jpg" width="100px" height="90px"></div>
+					   <div class=" ul col-8">
+							   <p>entreprise:&nbsp;<%= data.entreprise[i].nom %></p>
+							   <p>local:&nbsp;<%= data.entreprise[i].local %> </p>
+							   <p>description:&nbsp;<%= data.entreprise[i].description%></p>
+		
+
+					   </div>
+					   <div class=" btn-En col-12">
+						   <button href="/afficheD.ejs" type="submit" id="btn"formaction="/afficheD?nom=<%= data.entreprise[i].nom %>" class="btn btn-primary btn-md">afficher Departement</button>&nbsp;
+                       </div>
+					  </div>
+                    </div><!--/entreprise -->
+                    <% } %>
+					</div><!--/row -->
+				</form>
+				<!--modal ajouter departement -->
+				<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+					  <div class="modal-content">
+						<div class="modal-header">
+						  <h5 class="modal-title"  id="exampleModalLabel">ajouter departement</h5>
+						  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						  </button>
+						</div>
+						<div class="modal-body">
+                            <form method="POST">
+                                <label >nom entreprise</label><select class="form-control" name="select">
+                                    <% for(i in data.entreprise) {%>
+                                    <option><%= data.entreprise[i].nom %></option>
+                                    <% } %>
+                                  </select>   
+							<label >nom departement</label><input class="form-control" type="text" placeholder="Default input" name="nomD" required>
+							<label >chef departement</label><input class="form-control" type="text" placeholder="Default input" name="chef" required>
+							<label >description</label><input class="form-control" type="text" placeholder="Default input" name="descriptionD" required>
+							  <div class="col-12 d-flex justify-content-center" style="margin-top: 20px;">
+                                <button type="submit" formaction="/addD" class="btn btn-md btn-primary">ajouter departement</button>
+                            </form>
+							   </div>
+						</div>
+					</div>
+					  </div>
+					</div>
+				  </div>
+			
+		  <div class="col-12 d-flex justify-content-center " style="margin-top: 20px;">
+           <button class="btn btn-md btn-primary"data-toggle="modal" data-target="#exampleModal3">ajouter entreprise</button><div>&nbsp;</div>
+           <button class="btn btn-primary btn-md"data-toggle="modal" data-target="#exampleModal2">ajouter departement</button>
+		  </div>
+				</div><!--/container -->
+					<!--modal ajouter entreprise -->
+					<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h5 class="modal-title" id="exampleModalLabel">ajouter entreprise</h5>
+							  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							  </button>
+							</div>
+							<div class="modal-body">
+                                <form method="POST">
+								<label >nom entreprise</label><input class="form-control" type="text" placeholder="Default input" name="nom" required>
+								<label >local</label><input class="form-control" type="text" placeholder="Default input" name="local" required>
+								<label >description</label><input class="form-control" type="text" placeholder="Default input" name="description" required>
+								  <div class="col-12 d-flex justify-content-center" style="margin-top: 20px;">
+                                    <button type="submit" formaction="/addE" class="btn btn-md btn-primary">ajouter Entreprise</button>
+                                </form>
+								   </div>
+							</div>
+						</div>
+							
+						  </div>
+						</div>
+					  </div>
+					<!--/modal ajouter entreprise -->
+	
+				
+
+			</div><!--/main-content -->
+
+	</body>
+</html>

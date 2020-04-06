@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Responsive vertical menu navigation</title>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="rech.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/data.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script src="main.js"></script>
+
+		<style>
+			.entreprise{
+				margin-left: 10px;
+			}
+			body{
+				overflow-x: hidden;
+			}
+			.ad {
+				position: absolute;
+				width: 300px;
+				height: 250px;
+				border: 1px solid #ddd;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 250px;
+				z-index: 10;
+			}
+			.ad .close {
+				position: absolute;
+				font-family: 'ionicons';
+				width: 20px;
+				height: 20px;
+				color: #fff;
+				background-color: #999;
+				font-size: 20px;
+				left: -20px;
+				top: -1px;
+				display: table-cell;
+				vertical-align: middle;
+				cursor: pointer;
+				text-align: center;
+			}
+			
+		</style>
+		<script>$(document).ready(function() {
+			$('.nav-trigger').click(function() {
+				$('.side-nav').toggleClass('visible');
+			});
+		});
+		</script>
+		<script type="text/javascript">
+		
+		</script>
+
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>Gomy</span>
+			</div>
+			<a href="#" class="nav-trigger"><span></span></a>
+			
+		</div>
+		<div class="side-nav">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>Gomy</span>
+				
+			</div>
+			<nav>
+				<ul>
+					<li>
+						<a href="/home">
+							<span><i class="fa fa-user"></i></span>
+							<span>Liste Entreprise</span>
+						</a>
+					</li>
+				
+					<li class="active">
+						<a href="/rechercheS">
+							<span><i class="fa fa-bar-chart"></i></span>
+							<span>recherche salarie</span>
+						</a>
+					</li>
+				
+				</ul>
+			</nav>
+		</div>
+
+		<div class="main-content">
+            <div class="title col-12 d-flex justify-content-center">
+                recherche salarie
+            </div>
+            <nav class="navbar navbar-light bg-light" >
+                <form class="form-inline" method="POST">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="recherche" required>
+                  <button type="submit" formaction="/recherche" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+			  </nav>
+                <div class=" all row d-flex justify-content-center" style="margin-top: 20px;">
+					<%if ( typeof salarie != 'undefined' ) { %>
+					<%   for(i in salarie) { %>   
+						<div class="row row-cols-1 row-cols-md-1 ">
+							
+							<div class="card mb-3 " style="max-width: 540px">
+								<div class="row no-gutters">
+								  <div class="col-md-4">
+									<img src="Ellipse 2.png" class="img card-img" alt="...">
+								  </div>
+								  <div class="col-md-8">
+									<div class="card-body">
+									  <h5 class="card-title"><%=salarie[i].nom%>&nbsp;<%=salarie[i].prenom%></h5>
+									  <p class="card-text">
+										<%=salarie[i].age%>ans <br>
+										salaire: <%=salarie[i].salaire%> <br>
+										Matricule:<%=salarie[i].matricule%>
+									</p>
+									
+									</div>
+								  </div>
+								</div>
+							</div>
+						</div>
+					<%}%>
+					<%}%>
+                    </div><!--/row -->
+               
+        </div>
+    </body>
+</html>

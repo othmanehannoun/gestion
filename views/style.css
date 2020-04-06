@@ -1,0 +1,181 @@
+
+.main-content{
+  padding-top: 44px;
+  overflow: hidden;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 30px;
+  padding-left: 34px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 65px;
+}
+
+.row{
+  box-shadow: 0 2px 19px rgba(0,0,0,.20);
+  border-radius: 2px;
+  border-top: 2px solid #098DFA;
+  background-color: white;
+}
+.card-title{
+  color: black;
+}
+
+.extra_margin{
+  margin-top: 35px;
+}
+
+img{
+  width: 100%;
+  margin-bottom: 10px;
+}
+.lead{
+  margin-top: 28px;
+  color: black;
+  font-size: 30px;
+  font-family: sans-serif;
+}
+
+.discription{
+  color: #636363;
+}
+
+hr {
+    border-top: 2px solid black;
+    margin-bottom: 50px;
+    width: 95%;
+    margin-right: 25px;
+}
+
+.text-center {
+  text-align: end;
+}
+
+.ph{
+  color: black;
+  font-family: inherit;
+  font-size: 19px;
+}
+
+.ph span{
+  color: #777777;
+  font-size: 18px;
+}
+
+.ch-dp{
+  color: black;
+  font-family: cursive;
+  font-size: 19px;
+}
+
+.ch-dp span{
+  color: #777777;
+  font-size: 18px;
+}
+
+a {
+  font-size: 22px;
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* style table */
+
+.table{
+  width: 96%; 
+  background-color: white;
+  margin-left: 21px ;
+}
+
+@media (max-width: 700px){
+  .table{
+    width: 93%;
+    margin-left: 19px;
+  }
+
+  .titre{
+    margin-left: 25px;
+  }
+  
+}
+
+.titre{
+  border-top: 2px solid #098DFA;
+  width: 93%;
+  margin-left: 3px;
+  background-color: #eaeaea;
+  margin-bottom: 35px;
+}
+
+h3{
+  font-size: 50px;
+}
+
+.btn{
+  margin-left: 22px;
+    color: white;
+    padding: 4px 20px;
+    margin-bottom: 60px;
+}
+
+.f1{
+  display: flex;
+    flex-wrap: wrap;
+    padding: 10px 49px;
+    margin-left: 18px;
+}
+.col-md-6 {
+  
+}
+
+.bg-facebook {
+  background-color: #3b5998;
+}
+.bg-twitter{
+  background-color: #4099ff
+}
+.bg-linkdin{
+  background-color: #0077b5
+}
+.bg-google{
+  background-color: #d34836
+}
+
+.card-block-big {
+  padding: 24px;
+}
+
+.social-widget-card {
+  border-top: none;
+  color: #fff;
+}
+
+.h3{
+  font-size: 28px;
+  font-family: sans-serif;
+}
+
+#fa{
+  color: #fff;
+  font-size: 60px;
+  position: absolute;
+    margin-top: -40px;
+    margin-left: 20px;
+}
+#fas{
+  color: #fff;
+  font-size: 50px;
+  position: absolute;
+    margin-top: -30px;
+    margin-left: 7px;
+}
+
+ @media (max-width: 700px){
+  .f1{
+    display: none;
+      
+  }
+ }
