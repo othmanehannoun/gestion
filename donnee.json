@@ -1,0 +1,172 @@
+{
+  "entreprise": [
+    {
+      "nom": "ocp",
+      "local": "safi",
+      "description": "welcome to ocp",
+      "departement": [
+        {
+          "nomDepartement": "tdi",
+          "chef": "ghali",
+          "descriptionD": "hello",
+          "salarie": [
+            {
+              "matricule": "1",
+              "nom": "ghali",
+              "prenom": "rhali",
+              "age": "23",
+              "salaire": "1000dh"
+            },
+            {
+              "matricule": "2",
+              "nom": "gggggg",
+              "prenom": "ggggg",
+              "age": "23",
+              "salaire": "1000dh"
+            },
+            {
+              "matricule": "2",
+              "nom": "gggggg",
+              "prenom": "ggggg",
+              "age": "23",
+              "salaire": "1000dh"
+            }
+          ]
+        },
+        {
+          "nomDepartement": "tdi2",
+          "chef": "salam",
+          "descriptionD": "hello",
+          "salarie": [
+            {
+              "matricule": "2",
+              "nom": "youcode",
+              "prenom": "rhali",
+              "age": "23",
+              "salaire": "1000dh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "youcode",
+      "local": "safi",
+      "description": "welcome to code",
+      "departement": [
+        {
+          "nomDepartement": "tdi",
+          "chef": "ghaaali",
+          "descriptionD": "hello",
+          "salarie": [
+            {
+              "matricule": "1",
+              "nom": "ghali",
+              "prenom": "rhali",
+              "age": "23",
+              "salaire": "1000dh"
+            }
+          ]
+        },
+        {
+          "nomDepartement": "tri2",
+          "chef": "ghali",
+          "descriptionD": "hello",
+          "salarie": [
+            {
+              "matricule": "2",
+              "nom": "larbig",
+              "prenom": "ggggg",
+              "age": "23",
+              "salaire": "1000dh"
+            },
+            {
+              "matricule": "1",
+              "nom": "lar",
+              "prenom": "ghali",
+              "age": "23",
+              "salaire": "1000dh"
+            },
+            {
+              "matricule": "1",
+              "nom": "lar",
+              "prenom": "ghali",
+              "age": "23",
+              "salaire": "1000dh"
+            },
+            {
+              "matricule": "2",
+              "nom": "larbi",
+              "prenom": "ggggg",
+              "age": "23",
+              "salaire": "1000dh"
+            },
+            {
+              "matricule": "2",
+              "nom": "larbi",
+              "prenom": "ggggg",
+              "age": "23",
+              "salaire": "1000dh"
+            },
+            {
+              "matricule": "2",
+              "nom": "larbi",
+              "prenom": "ggggg",
+              "age": "23",
+              "salaire": "1000dh"
+            },
+            {
+              "matricule": "2",
+              "nom": "larbi",
+              "prenom": "ggggg",
+              "age": "23",
+              "salaire": "1000dh"
+            },
+            {
+              "matricule": "2",
+              "nom": "larbi",
+              "prenom": "ggggg",
+              "age": "23",
+              "salaire": "1000dh"
+            },
+            {
+              "matricule": "2",
+              "nom": "larbi",
+              "prenom": "ggggg",
+              "age": "23",
+              "salaire": "1000dh"
+            },
+            {
+              "matricule": "2",
+              "nom": "larbi",
+              "prenom": "ggggg",
+              "age": "23",
+              "salaire": "1000dh"
+            },
+            {
+              "matricule": "2",
+              "nom": "larbi",
+              "prenom": "ggggg",
+              "age": "23",
+              "salaire": "1000dh"
+            },
+            {
+              "matricule": "2",
+              "nom": "larbi",
+              "prenom": "ggggg",
+              "age": "23",
+              "salaire": "1000dh"
+            },
+            {
+              "matricule": "2",
+              "nom": "larbi",
+              "prenom": "ggggg",
+              "age": "23",
+              "salaire": "1000dh"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
